@@ -1,10 +1,14 @@
 "use client";
+import { useRef, useEffect, useState, ReactNode } from 'react';
 import { ReactLenis, useLenis } from 'lenis/react';
 import Image from "next/image"
 
 import heroImage1 from './lib/assets/92f9d47a-73f3-43e8-9cd9-10ded5e94487_rw_1920.jpg';
 import heroImage2 from './lib/assets/ae9a53f1-ef7e-410c-a934-15e204d58e2c_rw_1200.jpg';
-import backgroundImage1 from './lib/assets/0bf6c6a8-e516-46c3-a0b7-f1667f4b48c1_rw_1920.jpg'
+import backgroundImage1 from './lib/assets/0bf6c6a8-e516-46c3-a0b7-f1667f4b48c1_rw_1920.jpg';
+import backgroundImage2 from './lib/assets/22be765d-3843-45f9-b2a3-2018b37a12de_rw_1200.jpg';
+
+import ShootCard from './lib/components/shoot-card/page';
 
 function ScrollingBanner() {
     const clients = [
@@ -25,6 +29,61 @@ function ScrollingBanner() {
                 ))}
             </div>
         </div>
+    )
+}
+
+function RecentShootsScrollable({ children }: { children: ReactNode }) {
+    const containerRef = useRef<HTMLDivElement>(null);
+    const [innerWidth, setInnerWidth] = useState(0);
+    const [closestChild, setClosestChild] = useState<Element | null>(null);
+    useEffect(() => {
+        if (containerRef.current) {
+            const width = containerRef.current.clientWidth;
+            setInnerWidth(width);
+            const containerRect = containerRef.current.getBoundingClientRect();
+            const containerMidpoint = containerRect.left + (width / 2);
+            const children = Array.from(containerRef.current.children);
+            let nearest: Element | null = null;
+            let minDistance = Infinity;
+            children.forEach((child) => {
+                const childRect = child.getBoundingClientRect();
+                const childMidPoint = childRect.left + (childRect.width / 2);
+                const distance = Math.abs(containerMidpoint - childMidPoint);
+                if (distance < minDistance) {
+                    minDistance = distance;
+                    nearest = child;
+                }
+            });
+            setClosestChild(nearest);
+            closestChild?.classList.toggle('.active');
+        }
+    }, []);
+    {/* CALCULATE THE MID POINT OF THE SCREEN (WIDTH-WAYS) AND FIND WHICH CHILD ELEMENT OF THE REFERENCE DIV IS CLOSEST. THEN GIVE THAT CARD A CLASS THAT MAKES IT BIGGER AND INTERACTABLE */}
+    return (
+        <div className="recent-shoots w-full relative">
+            <div className='h-full absolute hidden lg:flex items-center top-0 left-10 z-5'>
+                <div className='aspect-square h-25 border-2 flex items-center'>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 66 43" fill='#fff' className='rotate-180'>
+                        <polygon
+                          points="39.58,4.46 44.11,0 66,21.5 44.11,43 39.58,38.54 56.94,21.5"
+                        ></polygon>
+                    </svg>
+                </div>
+            </div>
+            <div ref={containerRef} className='card-parent-div relative flex flex-row gap-5 -z-1'>
+                {children}
+            </div>
+            <div className='h-full absolute hidden lg:flex items-center top-0 right-10 z-5'>
+                <div className='aspect-square h-25 border-2 flex items-center'>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 66 43" fill='#fff'>
+                        <polygon
+                          points="39.58,4.46 44.11,0 66,21.5 44.11,43 39.58,38.54 56.94,21.5"
+                        ></polygon>
+                    </svg>
+                </div>
+            </div>
+        </div>
+
     )
 }
 
@@ -70,7 +129,15 @@ export default function Home() {
             <div className="scrolling-banner w-screen relative">
                 <ScrollingBanner />
             </div>
-            <div></div>
+            <div className='w-screen flex justify-center py-5 mt-10'>
+                <RecentShootsScrollable>
+                    <ShootCard title='Shoot 1' description='desc' imageLinks={[backgroundImage1.src, backgroundImage2.src]} />
+                    <ShootCard title='Shoot 1' description='desc' imageLinks={[backgroundImage1.src, backgroundImage2.src]} />
+                    <ShootCard title='Shoot 1' description='desc' imageLinks={[backgroundImage1.src, backgroundImage2.src]} />
+                    <ShootCard title='Shoot 1' description='desc' imageLinks={[backgroundImage1.src, backgroundImage2.src]} />
+                    <ShootCard title='Shoot 1' description='desc' imageLinks={[backgroundImage1.src, backgroundImage2.src]} />
+                </RecentShootsScrollable>
+            </div>
         </div>
     )
 }

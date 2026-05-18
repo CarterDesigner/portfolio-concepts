@@ -1,5 +1,9 @@
 @import 'tailwindcss';
 
+::-webkit-scrollbar {
+    display: none;
+}
+
 @theme inline {
     --color-white: #ffffff;
     --color-black: #282828;
@@ -32,7 +36,7 @@ body {
     color: var(--color-white);
 }
 
-.wrapper div::before {
+.wrapper div::before, .card-bg-grid-item::before {
     content: "";
     position: absolute;
     top: 0;
@@ -60,7 +64,7 @@ body {
     white-space: nowrap;;
 }
 
-.scrolling-banner::before {
+.scrolling-banner::before, .recent-shoots::before {
     content: "";
     position: absolute;
     top: 0;
@@ -71,6 +75,25 @@ body {
     z-index: 1;
     display: none;
 }
+
+.shoot-card div .grid {
+    transition: 0.2s ease;
+}
+.shoot-card:hover div .grid {
+    transform: scale(1.05);
+}
+
+.card-parent-div div {
+    transform: scale(0.95);
+    opacity: 0.8;
+    border: none !important;
+}
+
+.active {
+    transform: scale(1) !important;
+    opacity: 1 !important;
+}
+
 @media screen and (min-width: 1024px) {
     .scrolling-banner::before {
         display: block;
