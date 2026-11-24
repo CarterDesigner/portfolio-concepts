@@ -73,7 +73,7 @@ export default function Home() {
               <span className="text-black">From urgent storm repairs to complete roof replacements, our accredited UK roofers protect your property with a 25-year workmanship guarantee.</span>
             </div>
             <div className="h-[calc(min+19px)]">
-              <Cta1 link="/contact">View Our Services</Cta1>
+              <Cta1 link="#contact">View Our Services</Cta1>
             </div>
           </div>
         </div>
@@ -142,7 +142,7 @@ export default function Home() {
                 <div className="para-1 text-black px-5 py-5">
                   <span>Complete new roofs and re-tiling using durable natural slate and clay tiles. Built to withstand harsh British weather and backed by a 25-year guarantee.</span>
                 </div>
-                <Cta1 link="/contact">Book a Roof Survey</Cta1>
+                <Cta1 link="#contact">Book a Roof Survey</Cta1>
               </div>
             </div>
             <div className="w-full h-full flex flex-col justify-between ">
@@ -154,7 +154,7 @@ export default function Home() {
                 <div className="para-1 text-black px-5 py-5">
                   <span>Seamless GRP fibreglass and EPDM rubber flat roofing for extensions, garages, and dormers. 100% waterproof, low-maintenance, and UV-resistant.</span>
                 </div>
-                <Cta1 link="/contact">Get a Flat Roof Quote</Cta1>
+                <Cta1 link="#contact">Get a Flat Roof Quote</Cta1>
               </div>
             </div>
             <div className="w-full h-full flex flex-col justify-between ">
@@ -166,7 +166,7 @@ export default function Home() {
                 <div className="para-1 text-black px-5 py-5">
                   <span>Fast 24/7 response for storm damage, slipped tiles, and active leaks. We arrive quickly to make your home watertight with fixed, transparent pricing.</span>
                 </div>
-                <Cta1 link="/contact">Request a 24/7 Callout</Cta1>
+                <Cta1 link="#contact">Request a 24/7 Callout</Cta1>
               </div>
             </div>
             <div className="w-full h-full flex flex-col justify-between ">
@@ -178,7 +178,7 @@ export default function Home() {
                 <div className="para-1 text-black px-5 py-5">
                   <span>Expert chimney repointing, cowl installations, and precision Code 4/5 lead flashing to stop water ingress around roof joints and valleys.</span>
                 </div>
-                <Cta1 link="/contact">Book Chimney Inspection</Cta1>
+                <Cta1 link="#contact">Book Chimney Inspection</Cta1>
               </div>
             </div>
           </ScrollableBar>
@@ -193,7 +193,7 @@ export default function Home() {
                 <div className="para-1 text-black px-5 py-5">
                   <span>Complete new roofs and re-tiling using durable natural slate and clay tiles. Built to withstand harsh British weather and backed by a 25-year guarantee.</span>
                 </div>
-                <Cta1 link="/contact">Book a Roof Survey</Cta1>
+                <Cta1 link="#contact">Book a Roof Survey</Cta1>
               </div>
             </div>
             <div className="w-full h-full min-h-100 flex flex-col justify-between border-l border-b border-safety-orange">
@@ -205,7 +205,7 @@ export default function Home() {
                 <div className="para-1 text-black px-5 py-5">
                   <span>Seamless GRP fibreglass and EPDM rubber flat roofing for extensions, garages, and dormers. 100% waterproof, low-maintenance, and UV-resistant.</span>
                 </div>
-                <Cta1 link="/contact">Get a Flat Roof Quote</Cta1>
+                <Cta1 link="#contact">Get a Flat Roof Quote</Cta1>
               </div>
             </div>
             <div className="w-full h-full min-h-100 flex flex-col justify-between">
@@ -217,7 +217,7 @@ export default function Home() {
                 <div className="para-1 text-black px-5 py-5">
                   <span>Fast 24/7 response for storm damage, slipped tiles, and active leaks. We arrive quickly to make your home watertight with fixed, transparent pricing.</span>
                 </div>
-                <Cta1 link="/contact">Request a 24/7 Callout</Cta1>
+                <Cta1 link="#contact">Request a 24/7 Callout</Cta1>
               </div>
             </div>
             <div className="w-full h-full min-h-100 flex flex-col justify-between border-l border-safety-orange">
@@ -229,7 +229,7 @@ export default function Home() {
                 <div className="para-1 text-black px-5 py-5">
                   <span>Expert chimney repointing, cowl installations, and precision Code 4/5 lead flashing to stop water ingress around roof joints and valleys.</span>
                 </div>
-                <Cta1 link="/contact">Book Chimney Inspection</Cta1>
+                <Cta1 link="#contact">Book Chimney Inspection</Cta1>
               </div>
             </div>
         </div>
