@@ -48,6 +48,7 @@
 
 body {
   background-color: var(--color-bright-snow-white);
+  overflow-x: hidden;
 }
 
 @utility header-1 {
