@@ -1,0 +1,9 @@
+#scroll-btn {
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+    transition: 0.5s ease-in-out;
+}
+#scroll-btn:hover {
+    border-top-right-radius: 200px;
+    border-top-left-radius: 200px;
+}
