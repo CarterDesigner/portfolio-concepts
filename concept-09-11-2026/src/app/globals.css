@@ -1,0 +1,88 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Clash Display";
+  src: url("../../public/fonts/ClashDisplay-Variable.ttf") format("truetype");
+}
+@font-face {
+  font-family: "PP Neue Montreal book";
+  src: url("../../public/fonts/ppneuemontreal-book.otf") format("opentype");
+}
+@font-face {
+  font-family: "PP Neue Montreal thin";
+  src: url("../../public/fonts/ppneuemontreal-thin.otf") format("opentype");
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+@theme {
+  --color-black: #0D0D0D;
+  --color-yellow: #D4FF00;
+  --color-white: #EAEAEA;
+
+  --font-clash: "Clash Display", sans-serif;
+  --font-pp-book: "PP Neue Montreal book", sans-serif;
+  --font-pp-thin: "PP Neue Montreal thin", sans-serif;
+}
+
+html {
+  background-color: var(--color-black);
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.btn-style-primary {
+  position: relative;
+  background-color: var(--color-black);
+  border: solid 1px var(--color-yellow);
+  font-family: var(--font-clash);
+  font-size: 40px;
+  color: var(--color-white);
+  font-weight: 500;
+  text-transform: uppercase;
+  transition: .3s ease-in-out;
+}
+.btn-style-primary a {
+  padding: 30px 40px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  translate: 0 0 10px;
+}
+.btn-style-primary::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background-color: var(--color-white);
+  transition: .3s ease-in-out;
+}
+.btn-style-primary:hover {
+  color: var(--color-black);
+  border: solid 1px var(--color-white);
+}
+.btn-style-primary:hover::before {
+  bottom: 0;
+  top: auto;
+  height: 100%;
+}
+
+.mask-1 {
+    --mask-url: url("../../public/mask-1.png");
+    mask-image: var(--mask-url);
+    -webkit-mask-image: var(--mask-url);
+    mask-repeat: no-repeat;
+    -webkit-mask-repeat: no-repeat;
+    mask-size: calc(100% - 300px) 100%;
+    -webkit-mask-size: calc(100% - 300px) 100%;
+    mask-position: center;
+    -webkit-mask-position: center;
+}

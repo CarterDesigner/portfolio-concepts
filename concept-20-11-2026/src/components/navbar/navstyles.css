@@ -1,0 +1,24 @@
+#dropbtn-wrapper::before {
+    content: "";
+    width: 2px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: calc(50% - (2px/2));
+    background-color: var(--color-navy-blue);
+}
+#dropbtn-wrapper::after {
+    content: "";
+    width: 100%;
+    height: 2px;
+    position: absolute;
+    top: calc(50% - (2px/2));
+    left: 0;
+    background-color: var(--color-navy-blue);
+}
+#dropbtn-wrapper.expanded::before {
+    transform: rotateX(90deg);
+}
+#drop-menu.expanded {
+    display: block !important;
+}

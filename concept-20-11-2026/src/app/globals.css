@@ -1,0 +1,141 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+@font-face {
+  font-family: Archivo-black;
+  src: url("../../public/fonts/ArchivoBlack-Regular.ttf");
+}
+@font-face {
+  font-family: Space-mono;
+  src: url("../../public/fonts/SpaceMono-Regular.ttf");
+}
+
+@theme inline {
+  --color-navy-blue: #0F172A;
+  --color-safety-orange: #EA580C;
+  --color-bright-snow-white: #F8FAFC;
+  --color-black: #080A0C;
+
+  --font-archivo: "Archivo-black";
+  --font-space: "Space-mono";
+
+  --animate-marquee: marquee-left var(--marquee-duriation, 25s) linear infinite;
+
+  @keyframes marquee-left {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+}
+
+* { 
+  outline-offset: -1px;
+}
+.orange-border {
+  outline: solid var(--color-safety-orange) 2px;  
+}
+
+body {
+  background-color: var(--color-bright-snow-white);
+}
+
+@utility header-1 {
+  font-family: var(--font-archivo);
+  font-size: 116px;
+  line-height: 110%;
+  letter-spacing: -5%;
+  text-transform: uppercase;
+}
+@utility header-2 {
+  font-family: var(--font-archivo);
+  font-size: 57px;
+  line-height: 100%;
+  letter-spacing: -5%;
+  text-transform: uppercase;
+}
+@utility header-3 {
+  font-family: var(--font-archivo);
+  font-size: 45px;
+  line-height: 91%;
+  letter-spacing: -5%;
+  text-transform: uppercase;
+}
+@utility header-4 {
+  font-family: var(--font-archivo);
+  font-size: 25px;
+  line-height: 91%;
+  letter-spacing: -3%;
+  text-transform: uppercase;
+}
+@utility header-5 {
+  font-family: var(--font-archivo);
+  font-size: 22px;
+  line-height: 131%;
+  letter-spacing: -3%;
+  text-transform: uppercase;
+}
+@utility para-1 {
+  font-family: var(--font-space);
+  font-size: 19px;
+  line-height: 131%;
+  letter-spacing: -3%;
+}
+@utility para-2 {
+  font-family: var(--font-space);
+  font-size: 17px;
+  line-height: 131%;
+  letter-spacing: 1%;
+}
+@utility link-text {
+  font-family: var(--font-space);
+  font-size: 15px;
+  line-height: 110%;
+  letters-spacing: -1%;
+  text-transform: uppercase;
+}
+
+a {
+  scroll-behavior: smooth;
+}
+
+input {
+  background-color: var(--color-bright-snow-white);
+  padding: 10px 10px;
+  outline: none;
+  color: var(--color-black);
+}
+input:focus {
+  outline: none;
+  background-color: var(--color-navy-blue);
+  color: var(--color-bright-snow-white);
+}
+select {
+  outline: none;
+  border: none;
+  background-color: var(--color-bright-snow-white);
+  padding: 10px 10px;
+  color: var(--color-black);
+}
+select:focus {
+  outline: none;
+  border: none;
+}
+option {
+  background-color: var(--color-bright-snow-white); 
+  color: var(--color-black);
+}
+option:hover {
+  background-color: var(--color-navy-blue);
+  color: var(--color-bright-snow-white);
+}
